@@ -9,7 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pranav2317 <2k22.cse2211125@gmail.com>",
+  "contributors": [
+    "Pranav2317 <2k22.cse2211125@gmail.com>"
+  ],
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
