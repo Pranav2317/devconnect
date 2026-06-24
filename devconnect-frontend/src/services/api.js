@@ -4,7 +4,13 @@
 //  Change BASE_URL when you deploy to Render.
 // ============================================================
 
-export const BASE_URL = "http://localhost:5000";
+const apiUrl = import.meta.env.VITE_API_URL?.trim();
+
+if (import.meta.env.PROD && !apiUrl) {
+  throw new Error("Missing VITE_API_URL. Add your backend URL in Vercel environment variables.");
+}
+
+export const BASE_URL = apiUrl || "http://localhost:5000";
 
 // Helper: build headers with JWT token
 const authHeaders = () => ({

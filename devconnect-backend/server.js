@@ -132,7 +132,7 @@ io.on("connection", (socket) => {
 
 //  Start Server 
 //  Start Server 
-const PORT = process.env.PORT || 5000;
+const PORT = Number(process.env.PORT) || 5000;
 
 // Function to start server safely
 function startServer(port) {
@@ -140,7 +140,7 @@ function startServer(port) {
     console.log(`Server running on port ${port} ⚡`);
   });
 
-  server.on("error", (err) => {
+  server.once("error", (err) => {
     if (err.code === "EADDRINUSE") {
       console.log(`Port ${port} is busy, trying ${port + 1}...`);
       startServer(port + 1); // try next port
